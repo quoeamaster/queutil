@@ -3,7 +3,6 @@ package queutil
 import (
     "strings"
     "os"
-    "fmt"
 )
 
 // check if the given file exists or not
@@ -13,13 +12,12 @@ func IsFileExists(path string) bool {
         return false
     }
     // b) check existence
-    _, err := os.Stat(path)
-    if os.IsExist(err) {
-        return true
+    fileInfo, err := os.Stat(path)
+    if os.IsNotExist(err) {
+        return false
+    } else if fileInfo.IsDir() == true {
+        return false
     }
-    fmt.Println("** error?")
-    fmt.Println(err)
-
-    return false
+    return true
 }
 
