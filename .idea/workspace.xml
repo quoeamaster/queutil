@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/IOUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/IOUtil.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IdUtil.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IOUtil.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IOUtil.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IOUtil.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -21,6 +22,15 @@
               <folding>
                 <element signature="e#17#50#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IdUtil.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/IdUtil.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -43,6 +53,7 @@
       <list>
         <option value="$PROJECT_DIR$/IOUtil.fo.go" />
         <option value="$PROJECT_DIR$/IOUtil.go" />
+        <option value="$PROJECT_DIR$/IdUtil.go" />
       </list>
     </option>
   </component>
@@ -141,6 +152,13 @@
           <folding>
             <element signature="e#17#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IdUtil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
         </state>
       </provider>
     </entry>
