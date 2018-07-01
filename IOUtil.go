@@ -47,4 +47,8 @@ func ReadFileContent(file string) ([]byte, error) {
     return byteArr, nil
 }
 
+// write the given "content" to the "file" path
+func WriteStringToFile(file string, content string) error {
+    return ioutil.WriteFile(file, []byte(content), 0755i)
+}
 
