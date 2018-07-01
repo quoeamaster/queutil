@@ -94,3 +94,7 @@ func UnlockFile(file string) error {
     return locked.Unlock()
 }
 
+func GetAbsolutePathOfFile(filePtr *os.File) string {
+    return filePtr.Name()
+}
+
