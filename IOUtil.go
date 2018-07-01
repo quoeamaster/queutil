@@ -73,7 +73,7 @@ func LockFile(file string) (*os.File, error) {
     }
     return filePtr, nil
     */
-    return os.OpenFile(file, syscall.O_EXLOCK|syscall.O_APPEND, 0111)
+    return os.OpenFile(file, syscall.O_EXLOCK, 0111)
 }
 
 // method to unlock the given file
