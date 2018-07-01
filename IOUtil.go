@@ -5,7 +5,7 @@ import (
     "os"
     "os/user"
     "io/ioutil"
-    "github.com/nightlyone/lockfile"
+    "syscall"
 )
 
 // check if the given file exists or not
@@ -60,10 +60,11 @@ func RenameFile(file string, targetFile string) error {
 }
 
 // map of lock(s)
-var fileLockMap = make(map[string]lockfile.Lockfile, 0)
+var fileLockMap = make(map[string]*os.File, 0)
 
 // method to lock a file (exclusive lock and non-blocking)
-func LockFile(file string) (lockfile.Lockfile, error) {
+func LockFile(file string) (*os.File, error) {
+    /*
     locked, err := lockfile.New(file)
     if err == nil {
         err = locked.TryLock()
@@ -71,10 +72,10 @@ func LockFile(file string) (lockfile.Lockfile, error) {
     fileLockMap[file] = locked
 
     return locked, err
+    */
 
     // must open the file (to gain basic access lock)
-    /*
-    filePtr, err := os.Open(file)
+    filePtr, err := os.OpenFile(file, syscall.O_RDONLY, 0444)
     if err != nil {
         return nil, err
     }
@@ -82,19 +83,24 @@ func LockFile(file string) (lockfile.Lockfile, error) {
     if err != nil {
         return nil, err
     }
+
+    fileLockMap[file] = filePtr
+
     return filePtr, nil
-    */
-    //return os.OpenFile(file, syscall.O_EXLOCK, 0111)
 }
 
 // method to unlock the given file
 func UnlockFile(file string) error {
     locked := fileLockMap[file]
 
-    return locked.Unlock()
+    err := locked.Close()
+    if err != nil {
+        return err
+    }
+    // remove map entry
+    fileLockMap[file] = nil
+
+    return syscall.Flock(int(locked.Fd()), syscall.LOCK_UN)
 }
 
-func GetAbsolutePathOfFile(filePtr *os.File) string {
-    return filePtr.Name()
-}
 
