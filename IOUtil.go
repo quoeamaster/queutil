@@ -5,7 +5,7 @@ import (
     "os"
     "os/user"
     "io/ioutil"
-    "syscall"
+    "github.com/nightlyone/lockfile"
 )
 
 // check if the given file exists or not
@@ -60,7 +60,13 @@ func RenameFile(file string, targetFile string) error {
 }
 
 // method to lock a file (exclusive lock and non-blocking)
-func LockFile(file string) (*os.File, error) {
+func LockFile(file string) (lockfile.Lockfile, error) {
+    lockFile, err := lockfile.New(file)
+    if err != nil {
+        err = lockFile.TryLock()
+    }
+    return lockFile, err
+
     // must open the file (to gain basic access lock)
     /*
     filePtr, err := os.Open(file)
@@ -73,18 +79,11 @@ func LockFile(file string) (*os.File, error) {
     }
     return filePtr, nil
     */
-    return os.OpenFile(file, syscall.O_EXLOCK, 0111)
+    //return os.OpenFile(file, syscall.O_EXLOCK, 0111)
 }
 
 // method to unlock the given file
-func UnlockFile(filePtr *os.File) error {
-    if filePtr != nil {
-        err := syscall.Flock(int(filePtr.Fd()), syscall.LOCK_UN)
-        if err != nil {
-            return err
-        }
-        return filePtr.Close()
-    }
-    return nil
+func UnlockFile(lockFile lockfile.Lockfile) error {
+    return lockFile.Unlock()
 }
 

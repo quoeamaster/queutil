@@ -7,9 +7,15 @@
   packages = ["."]
   revision = "c442874ba63a7beb6c8b6f14ad1675de747b7f71"
 
+[[projects]]
+  branch = "master"
+  name = "github.com/nightlyone/lockfile"
+  packages = ["."]
+  revision = "0ad87eef1443f64d3d8c50da647e2b1552851124"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c00a86bf568bcb868f933352733abb7d01a90b2dc5abe83d143ab90046f5fae2"
+  inputs-digest = "1a624a11997fc2a486f0e6e1c2b8a36e0c981d9c9d77bd373febffa1c45711ae"
   solver-name = "gps-cdcl"
   solver-version = 1
