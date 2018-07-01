@@ -4,6 +4,7 @@ import (
     "strings"
     "os"
     "os/user"
+    "io/ioutil"
 )
 
 // check if the given file exists or not
@@ -30,4 +31,20 @@ func GetCurrentUserHomeDir() (string, error) {
     }
     return userPtr.HomeDir, nil
 }
+
+// read the given file; assume the file exist check has passed before
+// calling this method
+func ReadFileContent(file string) ([]byte, error) {
+    // assume file exist check has passed
+    filePtr, err := os.OpenFile(file, os.O_RDONLY, 0755)
+    if err != nil {
+        return nil, err
+    }
+    byteArr, err := ioutil.ReadAll(filePtr)
+    if err != nil {
+        return nil, err
+    }
+    return byteArr, nil
+}
+
 
