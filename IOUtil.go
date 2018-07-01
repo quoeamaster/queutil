@@ -3,6 +3,7 @@ package queutil
 import (
     "strings"
     "os"
+    "os/user"
 )
 
 // check if the given file exists or not
@@ -19,5 +20,14 @@ func IsFileExists(path string) bool {
         return false
     }
     return true
+}
+
+// return the current user's home directory (string)
+func GetCurrentUserHomeDir() (string, error) {
+    userPtr, err := user.Current()
+    if err != nil {
+        return "", err
+    }
+    return userPtr.HomeDir, nil
 }
 
