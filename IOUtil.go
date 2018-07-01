@@ -59,13 +59,18 @@ func RenameFile(file string, targetFile string) error {
     return os.Rename(file, targetFile)
 }
 
+// map of lock(s)
+var fileLockMap = make(map[string]lockfile.Lockfile, 0)
+
 // method to lock a file (exclusive lock and non-blocking)
 func LockFile(file string) (lockfile.Lockfile, error) {
-    lockFile, err := lockfile.New(file)
+    locked, err := lockfile.New(file)
     if err != nil {
-        err = lockFile.TryLock()
+        err = locked.TryLock()
     }
-    return lockFile, err
+    fileLockMap[file] = locked
+
+    return locked, err
 
     // must open the file (to gain basic access lock)
     /*
@@ -83,7 +88,9 @@ func LockFile(file string) (lockfile.Lockfile, error) {
 }
 
 // method to unlock the given file
-func UnlockFile(lockFile lockfile.Lockfile) error {
-    return lockFile.Unlock()
+func UnlockFile(file string) error {
+    locked := fileLockMap[file]
+
+    return locked.Unlock()
 }
 
