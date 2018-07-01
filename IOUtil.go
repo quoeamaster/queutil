@@ -50,7 +50,7 @@ func ReadFileContent(file string) ([]byte, error) {
 
 // write the given "content" to the "file" path
 func WriteStringToFile(file string, content string) error {
-    return ioutil.WriteFile(file, []byte(content), 0755)
+    return ioutil.WriteFile(file, []byte(content), 0111)
 }
 
 // rename the given file to the target destination.
