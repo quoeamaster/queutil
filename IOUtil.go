@@ -62,6 +62,7 @@ func RenameFile(file string, targetFile string) error {
 // method to lock a file (exclusive lock and non-blocking)
 func LockFile(file string) (*os.File, error) {
     // must open the file (to gain basic access lock)
+    /*
     filePtr, err := os.Open(file)
     if err != nil {
         return nil, err
@@ -71,16 +72,18 @@ func LockFile(file string) (*os.File, error) {
         return nil, err
     }
     return filePtr, nil
+    */
+    return os.OpenFile(file, syscall.O_EXLOCK|syscall.O_APPEND, 0755)
 }
 
 // method to unlock the given file
 func UnlockFile(filePtr *os.File) error {
     if filePtr != nil {
-        err := filePtr.Close()
+        err := syscall.Flock(int(filePtr.Fd()), syscall.LOCK_UN)
         if err != nil {
             return err
         }
-        return syscall.Flock(int(filePtr.Fd()), syscall.LOCK_UN)
+        return filePtr.Close()
     }
     return nil
 }
