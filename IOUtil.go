@@ -65,7 +65,7 @@ var fileLockMap = make(map[string]lockfile.Lockfile, 0)
 // method to lock a file (exclusive lock and non-blocking)
 func LockFile(file string) (lockfile.Lockfile, error) {
     locked, err := lockfile.New(file)
-    if err != nil {
+    if err == nil {
         err = locked.TryLock()
     }
     fileLockMap[file] = locked
