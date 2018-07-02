@@ -8,6 +8,7 @@ import (
     "strings"
     "github.com/DATA-DOG/godog/gherkin"
     "path/filepath"
+    "strconv"
 )
 
 var logger *queutil.FlexLogger
@@ -114,7 +115,7 @@ func gotRotationLogFile(rollingFile, logFolder string) error {
 
 func logNTimes(message string, numOfTimes int) error {
     for i := 0; i < numOfTimes; i++ {
-        _, err := rollingLogger.Write([]byte(message))
+        _, err := rollingLogger.Write([]byte(message + "\n"))
         if err != nil {
             return err
         }
@@ -123,6 +124,10 @@ func logNTimes(message string, numOfTimes int) error {
 }
 
 func validateNumberOfRollingFiles(logFolder string, minRollingFiles int, filenamePrefix string) error {
+    defer func() {
+        rollingLogger.Release(nil)
+    }()
+
     rollingFilenames := make([]string, 0)
     finalLogFolder = currentWd + queutil.GetFilepathSeparator() + logFolder
 
@@ -145,22 +150,72 @@ func validateNumberOfRollingFiles(logFolder string, minRollingFiles int, filenam
 }
 
 // *** scenario 3
+var finalLogWithOptionFile = ""
+var loggerWithOptions *queutil.FlexLogger
 
 func gotLogOptionFile(file string) error {
-    return godog.ErrPending
+    finalLogWithOptionFile = currentWd + queutil.GetFilepathSeparator() + "logs" + queutil.GetFilepathSeparator() + file
+    fmt.Println("file with option =>", finalLogWithOptionFile)
+
+    return nil
 }
 
 func addLoggersForOptionTesting(loggerList string) error {
-    return godog.ErrPending
+    loggerListComponents := strings.Split(loggerList, ",")
+
+    loggerWithOptions = queutil.NewFlexLogger()
+    for _, component := range loggerListComponents {
+        switch component {
+        case "consoleLogger":
+            loggerWithOptions.AddLogger(queutil.NewConsoleLogger())
+        case "rollingFileLogger":
+            loggerWithOptions.AddLogger(queutil.NewRollingFileLogger(
+                finalLogWithOptionFile, 1, 2, 2, true))
+        default:
+            return fmt.Errorf("non supoorted logger type [%v]", component)
+        }
+    }
+    return nil
 }
 
 func logWithOptions(message, loggerName, boolOptionInString string) error {
-    return godog.ErrPending
+    optionMap := make(map[string]bool)
+    optionMap["consoleLogger"] = true
+    optionMap["rollingFileLogger"] = true
+    boolOption, err := strconv.ParseBool(boolOptionInString)
+    if err != nil {
+        return err
+    }
+
+    switch loggerName {
+    case "consoleLogger":
+        optionMap["consoleLogger"] = boolOption
+    case "rollingFileLogger":
+        optionMap["rollingFileLogger"] = boolOption
+    }
+    // log
+    _, err = loggerWithOptions.WriteWithOptions([]byte(message + "\n"), optionMap)
+
+    return err
 }
 
-func checkIfLogFileContentsWithOptions(file, message string) error {
-    return godog.ErrPending
+func checkIfLogFileContentsWithOptions(_, message string) error {
+    defer func() {
+        loggerWithOptions.Release(nil)
+    }()
+
+    bytesArr, err := queutil.ReadFileContent(finalLogWithOptionFile)
+    if err != nil {
+        return err
+    }
+    content := strings.TrimSpace(string(bytesArr))
+    if strings.Index(content, message) >= 0 {
+        return nil
+    } else {
+        return fmt.Errorf("mismatch~ expected to contain [%v], actual content is [%v]", message, content)
+    }
 }
+
 
 func FeatureContext(s *godog.Suite) {
     s.BeforeSuite(func() {

@@ -37,7 +37,7 @@ Feature: logging features (log to file and console at the same time)
 
     Scenario: 3) test logging options
         Given a log file named "test-options.log"
-        Then a logger is created with the following loggers "ConsoleLogger,RollingFileLogger"
-        Then logging a message "## now only the log file should show the output ##" with options "ConsoleLogger" => "false"
+        Then a logger is created with the following loggers "consoleLogger,rollingFileLogger"
+        Then logging a message "## now only the log file should show the output ##" with options "consoleLogger" => "false"
         Then the console should have no log(s) whilst the "test-options.log" file contains "## now only the log file should show the output ##"
 
