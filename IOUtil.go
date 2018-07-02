@@ -38,7 +38,7 @@ func GetCurrentUserHomeDir() (string, error) {
 // calling this method
 func ReadFileContent(file string) ([]byte, error) {
     // assume file exist check has passed
-    filePtr, err := os.OpenFile(file, os.O_RDONLY, 0755)
+    filePtr, err := os.OpenFile(file, os.O_RDONLY, 0444)
     if err != nil {
         return nil, err
     }
@@ -51,7 +51,7 @@ func ReadFileContent(file string) ([]byte, error) {
 
 // write the given "content" to the "file" path
 func WriteStringToFile(file string, content string) error {
-    return ioutil.WriteFile(file, []byte(content), 0111)
+    return ioutil.WriteFile(file, []byte(content), 0444)
 }
 
 // rename the given file to the target destination.

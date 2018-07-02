@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/test/features/FileLocks/FileLocked.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gopkg.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gopkg.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IOUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/IOUtil.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,33 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileLocked.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/features/FileLocks/FileLocked.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileLocked_test.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="110" column="18" lean-forward="true" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
-              <folding>
-                <element signature="e#19#70#0" expanded="true" />
-                <element signature="n#!!block;n#contentOfFileCheckAfterLock#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IOUtil.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IOUtil.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/IOUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
+            <state relative-caret-position="187">
+              <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -84,8 +58,8 @@
         <option value="$PROJECT_DIR$/StructsAndInterfaces.go" />
         <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocks.feature" />
         <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocked.feature" />
-        <option value="$PROJECT_DIR$/IOUtil.go" />
         <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" />
+        <option value="$PROJECT_DIR$/IOUtil.go" />
       </list>
     </option>
   </component>
@@ -238,13 +212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IOUtil.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -253,6 +220,13 @@
             <element signature="e#19#70#0" expanded="true" />
             <element signature="n#!!block;n#contentOfFileCheckAfterLock#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IOUtil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
         </state>
       </provider>
     </entry>
