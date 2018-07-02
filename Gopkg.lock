@@ -2,20 +2,30 @@
 
 
 [[projects]]
+  name = "github.com/DATA-DOG/godog"
+  packages = [
+    ".",
+    "colors",
+    "gherkin"
+  ]
+  revision = "0371765570d36374bef4ab9f62ed0491f0862a3c"
+  version = "v0.7.6"
+
+[[projects]]
   branch = "master"
   name = "github.com/kjk/betterguid"
   packages = ["."]
   revision = "c442874ba63a7beb6c8b6f14ad1675de747b7f71"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/nightlyone/lockfile"
+  name = "github.com/theckman/go-flock"
   packages = ["."]
-  revision = "0ad87eef1443f64d3d8c50da647e2b1552851124"
+  revision = "b139a2487364247d91814e4a7c7b8fdc69e342b2"
+  version = "v0.4.0"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "1a624a11997fc2a486f0e6e1c2b8a36e0c981d9c9d77bd373febffa1c45711ae"
+  inputs-digest = "4af411ae6d07b68c827ad8a8ef6b4fa9d748a4c1b7e998b93805fbeb412d6906"
   solver-name = "gps-cdcl"
   solver-version = 1

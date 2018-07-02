@@ -5,7 +5,8 @@ import (
     "os"
     "os/user"
     "io/ioutil"
-    "syscall"
+    "github.com/theckman/go-flock"
+    "fmt"
 )
 
 // check if the given file exists or not
@@ -60,47 +61,34 @@ func RenameFile(file string, targetFile string) error {
 }
 
 // map of lock(s)
-var fileLockMap = make(map[string]*os.File, 0)
+var fileLockMap = make(map[string]*flock.Flock, 0)
 
 // method to lock a file (exclusive lock and non-blocking)
-func LockFile(file string) (*os.File, error) {
-    /*
-    locked, err := lockfile.New(file)
-    if err == nil {
-        err = locked.TryLock()
+func LockFile(file string) error {
+    // simply change the mode to -r--r--r--
+    flocked := flock.NewFlock(file)
+    if flocked != nil {
+        ok, err := flocked.TryLock()
+        if err != nil {
+            return err
+        }
+        if !ok {
+            return fmt.Errorf("could not acquire file lock for [%v]", file)
+        }
+        fileLockMap[file] = flocked
     }
-    fileLockMap[file] = locked
-
-    return locked, err
-    */
-
-    // must open the file (to gain basic access lock)
-    filePtr, err := os.OpenFile(file, syscall.O_RDONLY, 0444)
-    if err != nil {
-        return nil, err
-    }
-    err = syscall.Flock(int(filePtr.Fd()), syscall.LOCK_EX|syscall.LOCK_NB)
-    if err != nil {
-        return nil, err
-    }
-
-    fileLockMap[file] = filePtr
-
-    return filePtr, nil
+    return nil
 }
 
 // method to unlock the given file
 func UnlockFile(file string) error {
-    locked := fileLockMap[file]
-
-    err := locked.Close()
-    if err != nil {
-        return err
+    // reference on unix file mode => https://www.tutorialspoint.com/unix/unix-file-permission.htm
+    //return os.Chmod(file, 0755)
+    flocked := fileLockMap[file]
+    if flocked != nil {
+        return flocked.Unlock()
     }
-    // remove map entry
-    fileLockMap[file] = nil
-
-    return syscall.Flock(int(locked.Fd()), syscall.LOCK_UN)
+    return nil
 }
 
 
