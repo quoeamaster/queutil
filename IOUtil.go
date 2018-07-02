@@ -57,7 +57,12 @@ func WriteStringToFile(file string, content string) error {
 // rename the given file to the target destination.
 // Assume the source passed the exists check
 func RenameFile(file string, targetFile string) error {
-    return os.Rename(file, targetFile)
+    err := os.Rename(file, targetFile)
+    if err != nil {
+        return err
+    }
+    // chmod
+    return os.Chmod(targetFile, 0444)
 }
 
 // map of lock(s)
