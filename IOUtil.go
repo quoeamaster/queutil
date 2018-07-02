@@ -7,6 +7,7 @@ import (
     "io/ioutil"
     "github.com/theckman/go-flock"
     "fmt"
+    "runtime"
 )
 
 // check if the given file exists or not
@@ -94,6 +95,15 @@ func UnlockFile(file string) error {
         return flocked.Unlock()
     }
     return nil
+}
+
+// method to return the correct filepath separator based on the OS
+func GetFilepathSeparator() string {
+    if strings.Compare(runtime.GOOS, "windows") == 0 {
+        return "\\"
+    } else {
+        return "/"
+    }
 }
 
 
