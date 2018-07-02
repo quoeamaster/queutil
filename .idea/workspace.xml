@@ -13,20 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="IOUtil.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/IOUtil.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="StructsAndInterfaces.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IOUtil.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/IOUtil.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="64" column="37" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -86,24 +86,6 @@
             <path>
               <item name="queutil" type="b2602c69:ProjectViewProjectNode" />
               <item name="queutil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="queutil" type="b2602c69:ProjectViewProjectNode" />
-              <item name="queutil" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="queutil" type="b2602c69:ProjectViewProjectNode" />
-              <item name="queutil" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="queutil" type="b2602c69:ProjectViewProjectNode" />
-              <item name="queutil" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="FileLocks" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -198,13 +180,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/features/FileLocks/FileLocked.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -223,10 +198,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/IOUtil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="64" column="37" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
+        <state relative-caret-position="447">
+          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
         </state>
       </provider>
     </entry>
