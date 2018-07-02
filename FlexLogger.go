@@ -1,22 +1,14 @@
 package queutil
 
 import (
-    "gopkg.in/natefinch/lumberjack.v2"
     "fmt"
 )
 
 // TODO: add ILogFormatter interface for formatting logs (if necessary)
-// TODO: add switches to control which underlying logger should log the message (e.g. prevent consoleLogger to log)
 
-// Logger for console / stdout logging
-type ConsoleLogger struct {
 
-}
 
-// simple just write to the stdout
-func (c *ConsoleLogger) Write(p []byte) (n int, err error) {
-    return fmt.Println(string(p))
-}
+
 
 
 type FlexLoggerConfig struct {
@@ -47,16 +39,26 @@ func NewFlexLoggerConfig(file string, maxFileSize, maxFileBackups, maxRetentionD
 
 
 type FlexLogger struct {
+    // map of ILogger instances for logging. Key is the name of the logger,
+    // value is the ILogger implementation
+    Loggers map[string]ILogger
+
+
+
     // lumberjack logger is for roll-able file logging
-    lumberjackLogger *lumberjack.Logger
+    //lumberjackLogger *lumberjack.Logger
 
     // console / stdout logger
-    consoleLogger *ConsoleLogger
+    //consoleLogger *ConsoleLogger
 }
 
-func NewFlexLogger(loggerConfig *FlexLoggerConfig) *FlexLogger {
+func NewFlexLogger() *FlexLogger {
     l := new(FlexLogger)
 
+    l.Loggers = make(map[string]ILogger)
+
+    // TODO: no more initialization here... instead call AddLogger(*ILogger) instead
+    /*
     if loggerConfig != nil {
         l.lumberjackLogger = &lumberjack.Logger{
             Filename: loggerConfig.LogFile,
@@ -67,30 +69,61 @@ func NewFlexLogger(loggerConfig *FlexLoggerConfig) *FlexLogger {
         }
     }
     l.consoleLogger = new(ConsoleLogger)
-
+    */
     return l
 }
 
-func (f *FlexLogger) Write(p []byte) (n int, err error) {
-    // write to console (usually ok)
-    f.consoleLogger.Write(p)
-
-    // write to file (lumberjack)
-    iWrote, err := f.lumberjackLogger.Write(p)
-    if err != nil {
-        return iWrote, err
+// method add the given logger implementation
+func (f *FlexLogger) AddLogger(logger ILogger) {
+    if logger != nil {
+        f.Loggers[logger.Name()] = logger
     }
-    _, err = f.lumberjackLogger.Write([]byte("\n"))
-    if err != nil {
-        return 1, err
-    }
-    return iWrote, nil
 }
+
+// similar to calling WriteWithOptions([]byte, nil);
+// which means all available Logger(s) would log the given message
+func (f *FlexLogger) Write(p []byte) (n int, err error) {
+    return f.WriteWithOptions(p, nil)
+}
+
+// log message based on the options provided; if options is nil then all
+// logger(s) will log the given []byte, else would need to
+// check if a "true" is associated with logger's name in which a "true"
+// indicates the logger to log the message
+func (f *FlexLogger) WriteWithOptions(p []byte, options map[string]bool) (n int, err error) {
+    // force log for all available logger(s)
+    forceLog := false
+
+    if options == nil {
+        forceLog = true
+    }
+
+    for loggerName, logger := range f.Loggers {
+        if forceLog == true || options[loggerName] == true {
+            _, err := logger.Write(p)
+            if err != nil {
+                // TODO: should let it pass through or return error?
+                return 0, err
+            }
+        }
+    }
+    return 0, nil
+}
+
 
 // release resources before the instance is removed
 func (f *FlexLogger) Release(optionalParam map[string]interface{}) error {
-    // consoleLogger... anything to release???
+    var firstErr error
 
-    return f.lumberjackLogger.Close()
+    for _, logger := range f.Loggers {
+        err := logger.Release(optionalParam)
+        if err != nil {
+            if firstErr == nil {
+                firstErr = err
+            }
+            fmt.Printf("[%v] release error => %v\n", logger.Name(), err)
+        }
+    }
+    return firstErr
 }
 

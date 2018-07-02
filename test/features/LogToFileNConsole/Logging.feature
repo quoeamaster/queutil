@@ -14,8 +14,8 @@ Feature: logging features (log to file and console at the same time)
     Scenario: 1) create a logger for both console and fs
         Given a log folder named "logs"
         When a logger is created with log file patterns as follows "test-logs"
-        Then logging a message "this is hello World!@#"
-        And stdout would display the message PLUS the log file "test-logs" would also contain this entry "this is hello World!@#" as its last line
+        Then logging a message "Welcome to the Land of LOGS!"
+        And stdout would display the message PLUS the log file "test-logs" would also contain this entry "Welcome to the Land of LOGS!" as its last line
 
     Scenario: 2) test rolling file capability
         Given a log file named "test-rolling.log" under folder "logs"
@@ -24,5 +24,20 @@ Feature: logging features (log to file and console at the same time)
         Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
         Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
         Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
+        Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
+        Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
+        Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
+        Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
+        Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
+        Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
+        Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
+        Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
+        Then logging "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." for 2000 times
         Then the "logs" folder should contain at least 2 logs with prefix "test-rolling"
+
+    Scenario: 3) test logging options
+        Given a log file named "test-options.log"
+        Then a logger is created with the following loggers "ConsoleLogger,RollingFileLogger"
+        Then logging a message "## now only the log file should show the output ##" with options "ConsoleLogger" => "false"
+        Then the console should have no log(s) whilst the "test-options.log" file contains "## now only the log file should show the output ##"
 

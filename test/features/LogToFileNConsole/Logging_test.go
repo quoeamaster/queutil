@@ -27,6 +27,13 @@ func gotLogFolder(folder string) error {
 func gotLogPattern(logFilePattern string) error {
     logFilepath := currentWd + queutil.GetFilepathSeparator() + logFolder + queutil.GetFilepathSeparator() + logFilePattern
 
+    logger = queutil.NewFlexLogger()
+    // added 2 loggers
+    logger.AddLogger(queutil.NewRollingFileLogger(
+        logFilepath, 1, 2, 2, true))
+    logger.AddLogger(queutil.NewConsoleLogger())
+
+    /*
     logger = queutil.NewFlexLogger(&queutil.FlexLoggerConfig {
         LogFileBackupCompress: true,
         LogFileMaxDaysForRetention: 2,
@@ -34,13 +41,14 @@ func gotLogPattern(logFilePattern string) error {
         LogFileMaxSizeMb: 1,
         LogFile: logFilepath,
     })
+    */
 
     return nil
 }
 
 // step 3
 func log(message string) error {
-    iWrote, err := logger.Write([]byte(message))
+    iWrote, err := logger.Write([]byte(message + "\n"))
     if err != nil {
         return err
     }
@@ -96,8 +104,10 @@ func gotRotationLogFile(rollingFile, logFolder string) error {
     fmt.Println("rolling file location =>", finalLogFolder)
 
     // setup the logger
-    rollingLogger = queutil.NewFlexLogger(queutil.NewFlexLoggerConfig(finalLogFolder,
-        1, 2, 2, true))
+    rollingLogger = queutil.NewFlexLogger()
+    // add only RollingFileLogger
+    rollingLogger.AddLogger(queutil.NewRollingFileLogger(
+        finalLogFolder, 1, 2, 2, false))
 
     return nil
 }
@@ -134,6 +144,23 @@ func validateNumberOfRollingFiles(logFolder string, minRollingFiles int, filenam
     }
 }
 
+// *** scenario 3
+
+func gotLogOptionFile(file string) error {
+    return godog.ErrPending
+}
+
+func addLoggersForOptionTesting(loggerList string) error {
+    return godog.ErrPending
+}
+
+func logWithOptions(message, loggerName, boolOptionInString string) error {
+    return godog.ErrPending
+}
+
+func checkIfLogFileContentsWithOptions(file, message string) error {
+    return godog.ErrPending
+}
 
 func FeatureContext(s *godog.Suite) {
     s.BeforeSuite(func() {
@@ -178,4 +205,9 @@ func FeatureContext(s *godog.Suite) {
     s.Step(`^a log file named "([^"]*)" under folder "([^"]*)"$`, gotRotationLogFile)
     s.Step(`^logging "([^"]*)" for (\d+) times$`, logNTimes)
     s.Step(`^the "([^"]*)" folder should contain at least (\d+) logs with prefix "([^"]*)"$`, validateNumberOfRollingFiles)
+
+    s.Step(`^a log file named "([^"]*)"$`, gotLogOptionFile)
+    s.Step(`^a logger is created with the following loggers "([^"]*)"$`, addLoggersForOptionTesting)
+    s.Step(`^logging a message "([^"]*)" with options "([^"]*)" => "([^"]*)"$`, logWithOptions)
+    s.Step(`^the console should have no log\(s\) whilst the "([^"]*)" file contains "([^"]*)"$`, checkIfLogFileContentsWithOptions)
 }
