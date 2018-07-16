@@ -26,6 +26,15 @@ func (f *FlexLogger) AddLogger(logger ILogger) {
     }
 }
 
+// return the configured ILogger(s)'s name
+func (f *FlexLogger) GetLoggerNames() []string {
+    lNames := make([]string, 0)
+    for name := range f.Loggers {
+        lNames = append(lNames, name)
+    }
+    return lNames
+}
+
 // similar to calling WriteWithOptions([]byte, nil);
 // which means all available Logger(s) would log the given message
 func (f *FlexLogger) Write(p []byte) (n int, err error) {
