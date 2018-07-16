@@ -21,3 +21,9 @@ type ILogger interface {
     // when necessary
     Release(optionalParam map[string]interface{}) error
 }
+
+// interface to load ILogger configurations
+type ILoggerConfigReader interface {
+    // load the config from the given "configFile" then create the ILogger(s)
+    CreateLoggersFromConfig(configFile string) ([]ILogger, error)
+}

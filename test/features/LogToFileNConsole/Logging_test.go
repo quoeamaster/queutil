@@ -34,16 +34,6 @@ func gotLogPattern(logFilePattern string) error {
         logFilepath, 1, 2, 2, true))
     logger.AddLogger(queutil.NewConsoleLogger())
 
-    /*
-    logger = queutil.NewFlexLogger(&queutil.FlexLoggerConfig {
-        LogFileBackupCompress: true,
-        LogFileMaxDaysForRetention: 2,
-        LogFileMaxBackups: 2,
-        LogFileMaxSizeMb: 1,
-        LogFile: logFilepath,
-    })
-    */
-
     return nil
 }
 
@@ -216,6 +206,10 @@ func checkIfLogFileContentsWithOptions(_, message string) error {
     }
 }
 
+
+
+
+// ### Setup and execution ###
 
 func FeatureContext(s *godog.Suite) {
     s.BeforeSuite(func() {
