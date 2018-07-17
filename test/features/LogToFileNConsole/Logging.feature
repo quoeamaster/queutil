@@ -41,3 +41,13 @@ Feature: logging features (log to file and console at the same time)
         Then logging a message "## now only the log file should show the output ##" with options "consoleLogger" => "false"
         Then the console should have no log(s) whilst the "test-options.log" file contains "## now only the log file should show the output ##"
 
+    Scenario: 4) test logging levels
+        Given a log file named "test-levels.log" for loglevel test
+        Then logging a "info" message "## log info level msg ##" with logLevel set to "info"
+        Then the "test-levels.log" file contains "## log info level msg ##"
+        Then logging a "warn" message "## log warn level msg ##" with logLevel set to "info"
+        Then the "test-levels.log" file contains "## log warn level msg ##"
+        Then logging a "debug" message "## log debug level msg ##" with logLevel set to "info"
+        Then the console should have no log(s) whilst the "test-levels.log" file DOES NOT contains "## log debug level msg ##"
+        Then logging a "debug" message "## log debug level msg ##" with logLevel set to "debug"
+        Then the "test-levels.log" file contains "## log debug level msg ##"

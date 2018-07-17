@@ -68,7 +68,7 @@ func verifyLogResults(logFilePattern, message string) error {
             return fmt.Errorf("no logs available~~~~")
         }
 
-        if strings.Compare(lastLine, message) == 0 {
+        if strings.Index(lastLine, message) >= 0 {
             return nil
         } else {
             return fmt.Errorf("mismatch~ expected [%v] but got [%v]", message, lastLine)
@@ -184,7 +184,7 @@ func logWithOptions(message, loggerName, boolOptionInString string) error {
         optionMap["rollingFileLogger"] = boolOption
     }
     // log
-    _, err = loggerWithOptions.WriteWithOptions([]byte(message + "\n"), optionMap)
+    _, err = loggerWithOptions.WriteWithOptions([]byte(message + "\n"), optionMap, queutil.LogLevelInfo)
 
     return err
 }
@@ -206,7 +206,93 @@ func checkIfLogFileContentsWithOptions(_, message string) error {
     }
 }
 
+// scenario 4 (log level)
 
+var loggerForLevelTest *queutil.FlexLogger
+
+func gotLogLevelFile(filename string) error {
+    finalLogLevelFile := currentWd + queutil.GetFilepathSeparator() + "logs" + queutil.GetFilepathSeparator() + filename
+
+    loggerForLevelTest = queutil.NewFlexLogger()
+    loggerForLevelTest.AddLogger(queutil.NewRollingFileLogger(
+        finalLogLevelFile, 1, 1, 1,
+        true))
+
+    return nil
+}
+
+func logMessageWithLogLevel(logLevelMethod, msg, loggerLevel string) error {
+    var err error
+
+    // logger level
+    switch loggerLevel {
+    case "info":
+        loggerForLevelTest.LogLevel = queutil.LogLevelInfo
+    case "debug":
+        loggerForLevelTest.LogLevel = queutil.LogLevelDebug
+    case "warn":
+        loggerForLevelTest.LogLevel = queutil.LogLevelWarn
+    case "err":
+        loggerForLevelTest.LogLevel = queutil.LogLevelErr
+    default:
+        loggerForLevelTest.LogLevel = queutil.LogLevelInfo
+    }
+
+    // log method
+    switch logLevelMethod {
+    case "debug":
+        _, err = loggerForLevelTest.Debug([]byte(msg + "\n"))
+    case "info":
+        _, err = loggerForLevelTest.Info([]byte(msg + "\n"))
+    case "warn":
+        _, err = loggerForLevelTest.Warn([]byte(msg + "\n"))
+    case "err":
+        _, err = loggerForLevelTest.Err([]byte(msg + "\n"))
+    default:
+        _, err = loggerForLevelTest.Info([]byte(msg + "\n"))
+    }
+
+    if err != nil {
+        return err
+    }
+
+    return nil
+}
+
+func checkIfLogFileContentsMatchWithLevel(file, msg string) error {
+    bArr, err := queutil.ReadFileContent(currentWd + queutil.GetFilepathSeparator() + "logs" + queutil.GetFilepathSeparator() + file)
+
+    if err != nil {
+        return err
+    }
+    lines := strings.Split(string(bArr), "\n")
+    for _, line := range lines {
+        if strings.Index(line, msg) >= 0 {
+            return nil
+        }
+    }
+    return fmt.Errorf("expected the file contents to contain [%v], but NOT found", msg)
+}
+
+func checkIfLogFileContentsNotMatchWithLevel(file, msg string) error {
+    bArr, err := queutil.ReadFileContent(currentWd + queutil.GetFilepathSeparator() + "logs" + queutil.GetFilepathSeparator() + file)
+    matched := false
+
+    if err != nil {
+        return err
+    }
+    lines := strings.Split(string(bArr), "\n")
+    for _, line := range lines {
+        if strings.Index(line, msg) >= 0 {
+            matched = true
+        }
+    }
+    if matched == true {
+        return fmt.Errorf("expected the file contents NOT to contain [%v], but FOUND", msg)
+    } else {
+        return nil
+    }
+}
 
 
 // ### Setup and execution ###
@@ -259,4 +345,9 @@ func FeatureContext(s *godog.Suite) {
     s.Step(`^a logger is created with the following loggers "([^"]*)"$`, addLoggersForOptionTesting)
     s.Step(`^logging a message "([^"]*)" with options "([^"]*)" => "([^"]*)"$`, logWithOptions)
     s.Step(`^the console should have no log\(s\) whilst the "([^"]*)" file contains "([^"]*)"$`, checkIfLogFileContentsWithOptions)
+
+    s.Step(`^a log file named "([^"]*)" for loglevel test$`, gotLogLevelFile)
+    s.Step(`^logging a "([^"]*)" message "([^"]*)" with logLevel set to "([^"]*)"$`, logMessageWithLogLevel)
+    s.Step(`^the "([^"]*)" file contains "([^"]*)"$`, checkIfLogFileContentsMatchWithLevel)
+    s.Step(`^the console should have no log\(s\) whilst the "([^"]*)" file DOES NOT contains "([^"]*)"$`, checkIfLogFileContentsNotMatchWithLevel)
 }
