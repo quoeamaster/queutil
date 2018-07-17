@@ -20,10 +20,11 @@ func NewFlexLogger() *FlexLogger {
 }
 
 // method add the given logger implementation
-func (f *FlexLogger) AddLogger(logger ILogger) {
+func (f *FlexLogger) AddLogger(logger ILogger) *FlexLogger {
     if logger != nil {
         f.Loggers[logger.Name()] = logger
     }
+    return f
 }
 
 // return the configured ILogger(s)'s name
