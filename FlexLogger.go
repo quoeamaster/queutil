@@ -7,7 +7,7 @@ import (
 )
 
 const LogLevelDebug = 1
-const LogLevelInfo = 2
+const LogLevelInfo  = 2
 const LogLevelWarn  = 4
 const LogLevelErr   = 8
 
@@ -62,7 +62,7 @@ func (f *FlexLogger) Write(p []byte) (n int, err error) {
 // indicates the logger to log the message;
 func (f *FlexLogger) WriteWithOptions(p []byte, options map[string]bool, logLevel int) (n int, err error) {
     // check if the given logLevel should be logged or not
-    if logLevel < f.LogLevel {
+    if f.LogLevel > logLevel {
         return 0, nil
     }
     // force log for all available logger(s)
