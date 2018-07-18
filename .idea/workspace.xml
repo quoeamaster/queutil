@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/FlexLogger.go" beforeDir="false" afterPath="$PROJECT_DIR$/FlexLogger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/IOUtil.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-levels.log" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-levels.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-options.log" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-options.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling-2018-07-17T09-56-34.324.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling-2018-07-17T09-56-34.393.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling.log" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,29 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Logging.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/Logging.feature">
+      <file leaf-file-name="IOUtil.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/IOUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Logging_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="243" column="61" lean-forward="true" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FlexLogger.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FlexLogger.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+            <state relative-caret-position="450">
+              <caret line="108" column="45" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -66,6 +54,8 @@
       <find>we</find>
       <find>then logging</find>
       <find>welcome to</find>
+      <find>write</find>
+      <find>Discard</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.10.2/libexec" />
@@ -81,7 +71,6 @@
         <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocks.feature" />
         <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocked.feature" />
         <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" />
-        <option value="$PROJECT_DIR$/IOUtil.go" />
         <option value="$PROJECT_DIR$/LoggerImplementations.go" />
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml.go" />
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml" />
@@ -89,6 +78,7 @@
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging.feature" />
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" />
         <option value="$PROJECT_DIR$/FlexLogger.go" />
+        <option value="$PROJECT_DIR$/IOUtil.go" />
       </list>
     </option>
   </component>
@@ -342,13 +332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IOUtil.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="68" column="14" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -366,10 +349,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
+    <entry file="file://$PROJECT_DIR$/FlexLogger.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="364">
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="243" column="61" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -380,17 +370,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go">
+    <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="243" column="61" lean-forward="true" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="61" />
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FlexLogger.go">
+    <entry file="file:///usr/local/Cellar/go/1.10.2/libexec/src/io/ioutil/ioutil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+        <state relative-caret-position="220">
+          <caret line="124" column="17" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IOUtil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="108" column="45" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
         </state>
       </provider>
     </entry>

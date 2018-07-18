@@ -106,4 +106,8 @@ func GetFilepathSeparator() string {
     }
 }
 
+// method to write the given []byte to a file
+func WriteByteArrayToFile (p []byte, file string) error {
+    return ioutil.WriteFile(file, p, 0444)
+}
 
