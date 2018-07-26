@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/HttpClientUtil.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ErrorUtil.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpClientUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClientUtil.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpClientUtil.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HttpClientUtil.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="280">
+              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
               <folding>
                 <element signature="e#17#53#0" expanded="true" />
               </folding>
@@ -39,8 +41,20 @@
       <file leaf-file-name="HttpClient_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="106" column="6" selection-start-line="106" selection-start-column="6" selection-end-line="106" selection-end-column="6" />
+              <folding>
+                <element signature="e#20#72#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErrorUtil.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ErrorUtil.go">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -48,8 +62,8 @@
       <file leaf-file-name="HttpClient.feature" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+            <state relative-caret-position="255">
+              <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -98,6 +112,7 @@
         <option value="$PROJECT_DIR$/IOUtil.go" />
         <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature" />
         <option value="$PROJECT_DIR$/HttpClientUtil.go" />
+        <option value="$PROJECT_DIR$/ErrorUtil.go" />
         <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" />
       </list>
     </option>
@@ -118,7 +133,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,6 +162,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -175,7 +190,7 @@
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1615509" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16397415" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
@@ -209,6 +224,40 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="55" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding>
+            <element signature="e#20#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="e#17#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="55" />
         </state>
@@ -235,9 +284,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="33" column="29" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <element signature="e#17#76#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -276,9 +322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="33" column="29" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <element signature="e#17#76#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -338,27 +381,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="87" selection-start-line="10" selection-start-column="87" selection-end-line="10" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml.go" />
+    <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml" />
     <entry file="file://$PROJECT_DIR$/LoggerImplementations.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="25" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="e#17#76#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -404,13 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/go/1.10.2/libexec/src/net/http/request.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
@@ -432,27 +453,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10.2/libexec/src/net/http/client.go">
+    <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="105" column="22" lean-forward="true" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
+        <state relative-caret-position="255">
+          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go">
+    <entry file="file:///usr/local/Cellar/go/1.10.2/libexec/src/net/http/client.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        <state relative-caret-position="48">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="280">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
           <folding>
             <element signature="e#17#53#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="106" column="6" selection-start-line="106" selection-start-column="6" selection-end-line="106" selection-end-column="6" />
+          <folding>
+            <element signature="e#20#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ErrorUtil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
         </state>
       </provider>
     </entry>

@@ -5,6 +5,20 @@ import (
     "time"
 )
 
+// * duration and client creation sample code
+// timeout, err := time.ParseDuration("5s")
+//    if err != nil {
+//        return nil
+//    }
+//    client = queutil.GenerateHttpClient(timeout, nil, nil, nil)
+//
+//    res, err := client.Get(url)
+//
+// * cleanup
+// defer func() {
+//    res.Body.Close()
+// }()
+
 // method to create an HttpClient
 func GenerateHttpClient (
     timeout time.Duration,

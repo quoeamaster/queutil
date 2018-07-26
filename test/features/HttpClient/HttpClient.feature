@@ -15,7 +15,7 @@ Feature: Http Client features (able to send and handle http request; the result 
     - https://glosbe.com/gapi/tm?from=pol&dest=eng&format=json&phrase=borsuk&page=1&pretty=true
 
     Scenario: 1) basic request
-        Given a webservice url "https://glosbe.com/gapi/"
+        Given a webservice url "https://glosbe.com/gapi/tm"
         When parameters provided as "[from:eng,dest:eng,format:json,phrase:soccer,page:1,pretty:true]"
         Then calling the api would resulted a Json response
         And "football" is found within the response
