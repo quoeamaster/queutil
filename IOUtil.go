@@ -31,9 +31,6 @@ func IsDirExists (path string, createOnMissing bool) (bool, error) {
     if len(strings.TrimSpace(path)) > 0 {
         // check exists or not
         _, err := os.Stat(path)
-        if err != nil {
-            return true, err
-        }
         if os.IsNotExist(err) {
             if createOnMissing {
                 err = os.MkdirAll(path, os.ModePerm)
