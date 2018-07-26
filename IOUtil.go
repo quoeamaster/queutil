@@ -26,6 +26,29 @@ func IsFileExists(path string) bool {
     return true
 }
 
+// create missing folder(s)
+func IsDirExists (path string, createOnMissing bool) (bool, error) {
+    if len(strings.TrimSpace(path)) > 0 {
+        // check exists or not
+        _, err := os.Stat(path)
+        if err != nil {
+            return true, err
+        }
+        if os.IsNotExist(err) {
+            if createOnMissing {
+                err = os.MkdirAll(path, os.ModePerm)
+                if err != nil {
+                    return false, err
+                }
+            } else {
+                return false, nil
+            }
+        }
+    }
+    return false, nil
+}
+
+
 // return the current user's home directory (string)
 func GetCurrentUserHomeDir() (string, error) {
     userPtr, err := user.Current()
@@ -110,4 +133,6 @@ func GetFilepathSeparator() string {
 func WriteByteArrayToFile (p []byte, file string) error {
     return ioutil.WriteFile(file, p, 0444)
 }
+
+
 

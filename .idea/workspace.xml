@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/ErrorUtil.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClientUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClientUtil.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/IOUtil.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,11 +46,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ErrorUtil.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ErrorUtil.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ErrorUtil.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IOUtil.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/IOUtil.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -109,11 +114,11 @@
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging.feature" />
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" />
         <option value="$PROJECT_DIR$/FlexLogger.go" />
-        <option value="$PROJECT_DIR$/IOUtil.go" />
         <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature" />
         <option value="$PROJECT_DIR$/HttpClientUtil.go" />
         <option value="$PROJECT_DIR$/ErrorUtil.go" />
         <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" />
+        <option value="$PROJECT_DIR$/IOUtil.go" />
       </list>
     </option>
   </component>
@@ -418,13 +423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IOUtil.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="108" column="45" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FlexLogger.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
@@ -491,6 +489,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IOUtil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
         </state>
       </provider>
     </entry>
