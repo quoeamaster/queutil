@@ -11,10 +11,13 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-// dep related library folder
+# dep related library folder
 vendor/*
 
-// executable or .o file
+# executable or .o file
 queutil
 queutil.o
+
+# script folder
+script/*
 
