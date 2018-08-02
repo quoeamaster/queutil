@@ -19,7 +19,9 @@ import (
 //    res.Body.Close()
 // }()
 
-// method to create an HttpClient
+// method to create an HttpClient.
+// The important thing is that the caller should close the response body
+// after processing to prevent memory / resource leak
 func GenerateHttpClient (
     timeout time.Duration,
     transport http.RoundTripper,

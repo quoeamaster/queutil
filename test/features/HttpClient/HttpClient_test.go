@@ -80,7 +80,7 @@ func getJsonResponse() error {
     }
     responseString = string(byteArr)
 
-    // cleanup
+    // TODO: MUST cleanup
     defer func() {
         res.Body.Close()
     }()
