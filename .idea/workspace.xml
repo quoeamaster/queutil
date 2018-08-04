@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/ReflectionUtil.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTests_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClientUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClientUtil.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ErrorUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/ErrorUtil.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpClientUtil.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HttpClientUtil.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
@@ -48,20 +49,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ErrorUtil.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ErrorUtil.go">
+      <file leaf-file-name="ReflectionUtil.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ReflectionUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+            <state relative-caret-position="-5">
+              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpClient.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature">
+      <file leaf-file-name="ReflectionTests_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTests_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+            <state relative-caret-position="429">
+              <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
+              <folding>
+                <element signature="e#25#81#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReflectionTests.feature" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTests.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -85,6 +98,7 @@
       <find>welcome to</find>
       <find>write</find>
       <find>Discard</find>
+      <find>fmt.Pr</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.10.2/libexec" />
@@ -108,10 +122,15 @@
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" />
         <option value="$PROJECT_DIR$/FlexLogger.go" />
         <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature" />
-        <option value="$PROJECT_DIR$/ErrorUtil.go" />
         <option value="$PROJECT_DIR$/IOUtil.go" />
         <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" />
         <option value="$PROJECT_DIR$/HttpClientUtil.go" />
+        <option value="$PROJECT_DIR$/ErrorUtil.go" />
+        <option value="$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTestsObjects.go" />
+        <option value="$PROJECT_DIR$/test/features/ReflectionTests/RelectionTests.feature" />
+        <option value="$PROJECT_DIR$/ReflectionUtil.go" />
+        <option value="$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTests_test.go" />
+        <option value="$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTests.feature" />
       </list>
     </option>
   </component>
@@ -154,7 +173,7 @@
               <item name="queutil" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="HttpClient" type="462c0819:PsiDirectoryNode" />
+              <item name="ReflectionTests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -465,10 +484,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding>
+            <element signature="e#17#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ErrorUtil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+        <state relative-caret-position="120">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <element signature="e#17#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.10.2/libexec/src/builtin/builtin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="237" column="5" selection-start-line="237" selection-start-column="5" selection-end-line="237" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTestsObjects.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/ReflectionTests/RelectionTests.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -482,13 +535,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
+    <entry file="file://$PROJECT_DIR$/ReflectionUtil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+        <state relative-caret-position="-5">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTests_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
           <folding>
-            <element signature="e#17#53#0" expanded="true" />
+            <element signature="e#25#81#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTests.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
         </state>
       </provider>
     </entry>

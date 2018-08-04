@@ -1,6 +1,14 @@
 package queutil
 
-import "strings"
+import (
+    "strings"
+    "fmt"
+)
+
+// method to create an error interface / object based on the given string
+func CreateErrorWithString (err string) error {
+    return fmt.Errorf(fmt.Sprintf("%v", err))
+}
 
 // method to check if Client.Timeout has occured
 func IsHttpClientTimeoutError (err error) bool {
