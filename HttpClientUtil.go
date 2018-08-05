@@ -44,8 +44,9 @@ func GenerateHttpClient (
 }
 
 // method to get back the httpRequest content; could be a valid []byte or
-// an empty []byte or
-// nil + error
+// an empty []byte or nil + error.
+// Caller SHOULD close the http request object instead since further
+// operation on the Request object might be needed
 func GetHttpRequestContent (req *http.Request) ([]byte, error) {
     if req == nil {
         return nil, CreateErrorWithString(fmt.Sprintf("http request is not valid~ [%v]", req))
