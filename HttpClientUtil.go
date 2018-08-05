@@ -3,6 +3,7 @@ package queutil
 import (
     "net/http"
     "time"
+    "fmt"
 )
 
 // * duration and client creation sample code
@@ -40,6 +41,30 @@ func GenerateHttpClient (
         client.Jar = cookies
     }
     return &client
+}
+
+// method to get back the httpRequest content; could be a valid []byte or
+// an empty []byte or
+// nil + error
+func GetHttpRequestContent (req *http.Request) ([]byte, error) {
+    if req == nil {
+        return nil, CreateErrorWithString(fmt.Sprintf("http request is not valid~ [%v]", req))
+    }
+    contentLen := int(req.ContentLength)
+    if contentLen > 0 {
+        bArr := make([]byte, contentLen)
+        _, err := req.Body.Read(bArr)
+
+        // is it a valid EOF exception?
+        if IsHttpRequestValidEOFError(err, contentLen) {
+            return bArr, nil
+        } else {
+            return nil, err
+        }
+    } else {
+        // really empty entry; hence return empty []byte
+        return []byte {}, nil
+    }
 }
 
 
