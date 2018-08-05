@@ -20,3 +20,15 @@ func IsHttpClientTimeoutError (err error) bool {
     }
     return false
 }
+
+// a method for checking if it is an EOF error; when REST api contains a body,
+// there might be chances to receive a "EOF" even though it is valid in the content
+func IsHttpRequestValidEOFError (err error, httpRequestContentLength int) bool {
+    if err == nil {
+        return false
+    }
+    if httpRequestContentLength > 0 && strings.Index(err.Error(), "EOF") == 0 {
+        return true
+    }
+    return false
+}

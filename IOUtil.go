@@ -42,7 +42,7 @@ func IsDirExists (path string, createOnMissing bool) (bool, error) {
             }
         }
     }
-    return false, nil 
+    return false, nil
 }
 
 
