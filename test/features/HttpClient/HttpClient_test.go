@@ -6,7 +6,6 @@ import (
     "fmt"
     "net/http"
     "queutil"
-    "time"
     "io/ioutil"
 )
 
@@ -45,10 +44,12 @@ func getParams(paramsInString string) error {
         }
     }
     // create httpClient  ʕ·ᴥ·ʔ
-    timeout, err := time.ParseDuration("5s")
+    timeout, err := queutil.CreateTimeoutByString("5s")
     if err != nil {
         return err
     }
+    // timeout, err := time.ParseDuration("5s")
+
     client = queutil.GenerateHttpClient(timeout, nil, nil, nil)
 
     return nil
