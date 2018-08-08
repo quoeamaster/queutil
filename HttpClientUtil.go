@@ -68,5 +68,26 @@ func GetHttpRequestContent (req *http.Request) ([]byte, error) {
     }
 }
 
+func GetHttpResponseContent (res *http.Response) ([]byte, error) {
+    if res == nil {
+        return nil, CreateErrorWithString(fmt.Sprintf("http response is not valid~ [%v]", res))
+    }
+    contentLen := int(res.ContentLength)
+    if contentLen > 0 {
+        bArr := make([]byte, contentLen)
+        _, err := res.Body.Read(bArr)
+
+        // is it a valid EOF exception?
+        if IsHttpRequestValidEOFError(err, contentLen) {
+            return bArr, nil
+        } else {
+            return nil, err
+        }
+    } else {
+        // really empty entry; hence return empty []byte
+        return []byte {}, nil
+    }
+}
+
 
 
