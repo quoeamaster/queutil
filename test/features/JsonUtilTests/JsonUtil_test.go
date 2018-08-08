@@ -7,6 +7,7 @@ import (
     "strconv"
     "strings"
     "fmt"
+    "encoding/json"
 )
 
 var buf bytes.Buffer
@@ -54,6 +55,25 @@ func addFloatValue(key string, floatBase int, value string) error {
     return nil
 }
 
+func addArrayValue(key, jsonString string) error {
+    // parse json string back to interface{}
+    objList := strings.Split(jsonString, " ,")
+    //XYPairList := make([]XYPair, 0)
+    XYPairList := make([]interface{}, 0)
+
+    for _, objString := range objList {
+        xyPair := new(XYPair)
+        err := json.Unmarshal([]byte(objString), xyPair)
+        if err != nil {
+            return err
+        }
+        XYPairList = append(XYPairList, xyPair)
+    }
+    buf = queutil.AddArrayToJsonStructure(buf, key, XYPairList)
+
+    return nil
+}
+
 func scenarioEnds() error {
     buf = queutil.EndJsonStructure(buf)
     return nil
@@ -79,5 +99,25 @@ func FeatureContext(s *godog.Suite) {
     s.Step(`^key "([^"]*)" and bool value (.*) is given$`, addBoolValue)
     s.Step(`^key "([^"]*)" and float(\d+) value (.*) is given$`, addFloatValue)
     s.Step(`^close the scenario$`, scenarioEnds)
+    s.Step(`^key "([^"]*)" and array value \[(.*)\] is given$`, addArrayValue)
     s.Step(`^result of the json created should be (.*)$`, verifyResults)
+}
+
+
+type XYPair struct {
+    X int
+    Y int
+}
+func (xy *XYPair) JsonString () string {
+    var b bytes.Buffer
+
+    b = queutil.BeginJsonStructure(b)
+    b = queutil.AddIntToJsonStructure(b, "X", xy.X)
+    b = queutil.AddIntToJsonStructure(b, "Y", xy.Y)
+    b = queutil.EndJsonStructure(b)
+
+    return b.String()
+}
+func (xy *XYPair) String() string {
+    return xy.JsonString()
 }

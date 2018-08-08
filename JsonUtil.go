@@ -92,6 +92,35 @@ func AddBoolToJsonStructure (buf bytes.Buffer, key string, value bool) bytes.Buf
 
 // TODO: add array syntax and map (object) syntax too
 
+// assume the interface{} String() returns a valid json as well...
+// or else it won't work
+func AddArrayToJsonStructure (buf bytes.Buffer, key string, values []interface{}) bytes.Buffer {
+    if isStringEmpty(key) {
+        return buf
+    }
+    // key and value
+    buf.WriteString("\"")
+    buf.WriteString(key)
+    buf.WriteString("\": [")
+
+    for idx, val := range values {
+        if idx > 0 {
+            buf.WriteString(",")
+        }
+        // cast back to IJsonStringAble or Stringer
+        // ref: https://stackoverflow.com/questions/27803654/explanation-of-checking-if-value-implements-interface
+        ijson, ok := val.(fmt.Stringer)
+        if ok {
+            buf.WriteString(ijson.String())
+
+        } else {
+            fmt.Println("unknown...", ijson)
+        }
+    }
+    buf.WriteString("]")
+    return buf
+}
+
 
 // helper method to append a "," if necessary
 func removeTrailingCommaFromJsonStructure (buf bytes.Buffer) bytes.Buffer {

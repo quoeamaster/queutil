@@ -22,3 +22,7 @@ type ILogger interface {
     Release(optionalParam map[string]interface{}) error
 }
 
+// interface indicating the implementation is able to be represented in json format
+type IJsonStringAble interface {
+    JsonString() string
+}

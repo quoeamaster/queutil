@@ -23,5 +23,6 @@ Feature:
         Then key "member" and bool value true is given
         Then key "loyalty" and float32 value 7.5 is given
         Then key "satisfaction" and float64 value 9.0 is given
+        Then key "hobby" and array value [{"x": 1, "y": 2} ,{"x": 3, "y": 4}] is given
         Then close the scenario
-        And result of the json created should be {"firstname": "Huang","lastname": "Json","age": 26,"member": true,"loyalty": 7.5,"satisfaction": 9}
+        And result of the json created should be {"firstname": "Huang","lastname": "Json","age": 26,"member": true,"loyalty": 7.5,"satisfaction": 9,"hobby": [{"X": 1,"Y": 2},{"X": 3,"Y": 4}]}
