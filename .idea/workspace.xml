@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/JsonUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/JsonUtil.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlexLogger.go" beforeDir="false" afterPath="$PROJECT_DIR$/FlexLogger.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,11 +40,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JsonUtil.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JsonUtil.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JsonUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="687">
               <caret line="135" column="61" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlexLogger.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FlexLogger.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="158" column="39" selection-start-line="158" selection-start-column="39" selection-end-line="158" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -110,7 +119,6 @@
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml" />
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging.feature" />
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" />
-        <option value="$PROJECT_DIR$/FlexLogger.go" />
         <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature" />
         <option value="$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTestsObjects.go" />
         <option value="$PROJECT_DIR$/test/features/ReflectionTests/RelectionTests.feature" />
@@ -128,6 +136,7 @@
         <option value="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature" />
         <option value="$PROJECT_DIR$/TypeUtil.go" />
         <option value="$PROJECT_DIR$/JsonUtil.go" />
+        <option value="$PROJECT_DIR$/FlexLogger.go" />
       </list>
     </option>
   </component>
@@ -406,13 +415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FlexLogger.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="86" column="14" lean-forward="true" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/go/1.10.2/libexec/src/net/http/request.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
@@ -492,13 +494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LoggerImplementations.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IOUtil.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -562,10 +557,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/LoggerImplementations.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-230">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JsonUtil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="687">
           <caret line="135" column="61" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlexLogger.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="158" column="39" selection-start-line="158" selection-start-column="39" selection-end-line="158" selection-end-column="39" />
         </state>
       </provider>
     </entry>

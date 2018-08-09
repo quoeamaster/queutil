@@ -125,12 +125,18 @@ func (f *FlexLogger) addLogHeader(p []byte, logLevel int, optionals map[string]i
 func (f *FlexLogger) Debug(p []byte) (int, error) {
     return f.WriteWithOptions(p, nil, LogLevelDebug)
 }
+func (f *FlexLogger) DebugString(p string) (int, error) {
+    return f.WriteWithOptions([]byte(p), nil, LogLevelDebug)
+}
 func (f *FlexLogger) DebugWithOptions(p []byte, options map[string]bool) (int, error) {
     return f.WriteWithOptions(p, options, LogLevelDebug)
 }
 
 func (f *FlexLogger) Info(p []byte) (int, error) {
     return f.WriteWithOptions(p, nil, LogLevelInfo)
+}
+func (f *FlexLogger) InfoString(p string) (int, error) {
+    return f.WriteWithOptions([]byte(p), nil, LogLevelInfo)
 }
 func (f *FlexLogger) InfoWithOptions(p []byte, options map[string]bool) (int, error) {
     return f.WriteWithOptions(p, options, LogLevelInfo)
@@ -139,12 +145,18 @@ func (f *FlexLogger) InfoWithOptions(p []byte, options map[string]bool) (int, er
 func (f *FlexLogger) Warn(p []byte) (int, error) {
     return f.WriteWithOptions(p, nil, LogLevelWarn)
 }
+func (f *FlexLogger) WarnString(p string) (int, error) {
+    return f.WriteWithOptions([]byte(p), nil, LogLevelWarn)
+}
 func (f *FlexLogger) WarnWithOptions(p []byte, options map[string]bool) (int, error) {
     return f.WriteWithOptions(p, options, LogLevelWarn)
 }
 
 func (f *FlexLogger) Err(p []byte) (int, error) {
     return f.WriteWithOptions(p, nil, LogLevelErr)
+}
+func (f *FlexLogger) ErrString(p string) (int, error) {
+    return f.WriteWithOptions([]byte(p), nil, LogLevelErr)
 }
 func (f *FlexLogger) ErrWithOptions(p []byte, options map[string]bool) (int, error) {
     return f.WriteWithOptions(p, options, LogLevelErr)
