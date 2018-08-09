@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JsonUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/JsonUtil.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +43,8 @@
       <file leaf-file-name="JsonUtil.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JsonUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="141" column="4" selection-start-line="141" selection-start-column="4" selection-end-line="141" selection-end-column="4" />
+            <state relative-caret-position="257">
+              <caret line="135" column="61" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -565,8 +564,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JsonUtil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="141" column="4" selection-start-line="141" selection-start-column="4" selection-end-line="141" selection-end-column="4" />
+        <state relative-caret-position="257">
+          <caret line="135" column="61" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
         </state>
       </provider>
     </entry>

@@ -133,13 +133,10 @@ func BeginObjectJsonStructure (buf bytes.Buffer, key string) bytes.Buffer {
     return buf
 }
 
-func EndObjectJsonStructure (buf bytes.Buffer, key string) bytes.Buffer {
-    if isStringEmpty(key) {
-        return buf
-    }
+func EndObjectJsonStructure (buf bytes.Buffer) bytes.Buffer {
     // add the key and open "{"
     buf.WriteString("}")
-    
+
     return buf
 }
 
