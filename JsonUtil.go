@@ -121,6 +121,27 @@ func AddArrayToJsonStructure (buf bytes.Buffer, key string, values []interface{}
     return buf
 }
 
+func BeginObjectJsonStructure (buf bytes.Buffer, key string) bytes.Buffer {
+    if isStringEmpty(key) {
+        return buf
+    }
+    // add the key and open "{"
+    buf.WriteString("\"")
+    buf.WriteString(key)
+    buf.WriteString("\": {")
+
+    return buf
+}
+
+func EndObjectJsonStructure (buf bytes.Buffer, key string) bytes.Buffer {
+    if isStringEmpty(key) {
+        return buf
+    }
+    // add the key and open "{"
+    buf.WriteString("}")
+    
+    return buf
+}
 
 // helper method to append a "," if necessary
 func removeTrailingCommaFromJsonStructure (buf bytes.Buffer) bytes.Buffer {
