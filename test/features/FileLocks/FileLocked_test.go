@@ -9,11 +9,30 @@ import (
     "io/ioutil"
     "strings"
     "github.com/theckman/go-flock"
+    "testing"
 )
 
 var targetFilePtr *os.File
 var targetFile string
 var flocked *flock.Flock
+
+func init() {
+    //godog.BindFlags("godog.", flag.CommandLine, &opt)
+}
+func TestMain(m *testing.M) {
+    status := godog.RunWithOptions("godog", func(s *godog.Suite) {
+        FeatureContext(s)
+    }, godog.Options{
+        Format:    "pretty",
+        Paths:     []string{"./"},
+        // Randomize: time.Now().UTC().UnixNano(), // randomize scenario execution order
+    })
+
+    if st := m.Run(); st > status {
+        status = st
+    }
+    os.Exit(status)
+}
 
 // ****************
 // ** scenario 1 **

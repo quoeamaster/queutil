@@ -26,3 +26,11 @@ Feature:
         Then key "hobby" and array value [{"x": 1, "y": 2} ,{"x": 3, "y": 4}] is given
         Then close the scenario
         And result of the json created should be {"firstname": "Huang","lastname": "Json","age": 26,"member": true,"loyalty": 7.5,"satisfaction": 9,"hobby": [{"X": 1,"Y": 2},{"X": 3,"Y": 4}]}
+
+    Scenario: 2) create a json based on a given interface
+        Given an Object with several fields set-able
+        When set field "FirstName" to "Huang"
+        Then set field "LastName" to "Json"
+        Then set field "Age" to number 16
+        Then done with field setup
+        And result of the json created should be {"FirstName": "Huang","LastName": "Json","Age": 16}

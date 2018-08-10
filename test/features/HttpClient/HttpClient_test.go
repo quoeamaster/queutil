@@ -7,6 +7,8 @@ import (
     "net/http"
     "queutil"
     "io/ioutil"
+    "testing"
+    "os"
 )
 
 type webserviceParams struct {
@@ -18,6 +20,24 @@ var srvUrl string
 var srvParams []webserviceParams
 var client *http.Client
 var responseString string
+
+func init() {
+    //godog.BindFlags("godog.", flag.CommandLine, &opt)
+}
+func TestMain(m *testing.M) {
+    status := godog.RunWithOptions("godog", func(s *godog.Suite) {
+        FeatureContext(s)
+    }, godog.Options{
+        Format:    "pretty",
+        Paths:     []string{"./"},
+        // Randomize: time.Now().UTC().UnixNano(), // randomize scenario execution order
+    })
+
+    if st := m.Run(); st > status {
+        status = st
+    }
+    os.Exit(status)
+}
 
 func getWebServiceUrl(url string) error {
     srvUrl = url

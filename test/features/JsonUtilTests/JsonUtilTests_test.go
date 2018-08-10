@@ -1,16 +1,36 @@
 package JsonUtilTests
 
 import (
+    "testing"
     "github.com/DATA-DOG/godog"
-    "bytes"
+    "os"
     "queutil"
     "strconv"
     "strings"
-    "fmt"
     "encoding/json"
+    "fmt"
+    "bytes"
 )
 
 var buf bytes.Buffer
+
+func init() {
+    //godog.BindFlags("godog.", flag.CommandLine, &opt)
+}
+func TestMain(m *testing.M) {
+    status := godog.RunWithOptions("godog", func(s *godog.Suite) {
+        FeatureContext(s)
+    }, godog.Options{
+        Format:    "pretty",
+        Paths:     []string{"./"},
+        // Randomize: time.Now().UTC().UnixNano(), // randomize scenario execution order
+    })
+
+    if st := m.Run(); st > status {
+        status = st
+    }
+    os.Exit(status)
+}
 
 func scenarioStarts() error {
     buf = queutil.BeginJsonStructure(buf)
@@ -87,6 +107,40 @@ func verifyResults(result string) error {
 }
 
 
+// ** scenario 2 **
+
+var user User
+
+func objectScenarioStarts() error {
+    user = *new(User)
+    return nil
+}
+
+func setFieldTo(fieldName, value string) error {
+    switch fieldName {
+    case "FirstName":
+        user.FirstName = value
+    case "LastName":
+        user.LastName = value
+    default:
+        return fmt.Errorf("unknown field %v", fieldName)
+    }
+    return nil
+}
+func setFieldToNumber(fieldName string, value int) error {
+    switch fieldName {
+    case "Age":
+        user.Age = value
+    default:
+        return fmt.Errorf("unknown field %v", fieldName)
+    }
+    return nil
+}
+func doneWithFieldSetup() error {
+    buf = queutil.ConvertInterfaceToJsonStructure(buf, user)
+
+    return nil
+}
 
 func FeatureContext(s *godog.Suite) {
     s.BeforeScenario(func(i interface{}) {
@@ -101,6 +155,11 @@ func FeatureContext(s *godog.Suite) {
     s.Step(`^close the scenario$`, scenarioEnds)
     s.Step(`^key "([^"]*)" and array value \[(.*)\] is given$`, addArrayValue)
     s.Step(`^result of the json created should be (.*)$`, verifyResults)
+
+    s.Step(`^an Object with several fields set-able$`, objectScenarioStarts)
+    s.Step(`^set field "([^"]*)" to "([^"]*)"$`, setFieldTo)
+    s.Step(`^set field "([^"]*)" to number (\d+)$`, setFieldToNumber)
+    s.Step(`^done with field setup$`, doneWithFieldSetup)
 }
 
 
@@ -120,4 +179,10 @@ func (xy *XYPair) JsonString () string {
 }
 func (xy *XYPair) String() string {
     return xy.JsonString()
+}
+
+type User struct {
+    FirstName string `json:"FirstName"`
+    LastName string `json:"LastName"`
+    Age int `json:"Age"`
 }

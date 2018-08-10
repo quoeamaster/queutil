@@ -4,6 +4,7 @@ import (
     "bytes"
     "strings"
     "fmt"
+    "reflect"
 )
 
 // appends the "{" to the buffer
@@ -24,7 +25,7 @@ func EndJsonStructure (buf bytes.Buffer) bytes.Buffer {
 
 // appends the given key, value pair to the buffer
 func AddStringToJsonStructure (buf bytes.Buffer, key, value string) bytes.Buffer {
-    if isStringEmpty(key) {
+    if IsStringEmpty(key) {
         return buf
     }
     // key
@@ -32,7 +33,7 @@ func AddStringToJsonStructure (buf bytes.Buffer, key, value string) bytes.Buffer
     buf.WriteString(key)
     buf.WriteString("\": ")
     // value
-    if isStringEmpty(value) {
+    if IsStringEmpty(value) {
         buf.WriteString("null")
     } else {
         buf.WriteString("\"")
@@ -43,7 +44,7 @@ func AddStringToJsonStructure (buf bytes.Buffer, key, value string) bytes.Buffer
 }
 
 func AddIntToJsonStructure (buf bytes.Buffer, key string, value int) bytes.Buffer {
-    if isStringEmpty(key) {
+    if IsStringEmpty(key) {
         return buf
     }
     // key and value
@@ -55,7 +56,7 @@ func AddIntToJsonStructure (buf bytes.Buffer, key string, value int) bytes.Buffe
 }
 
 func AddFloat32ToJsonStructure (buf bytes.Buffer, key string, value float32) bytes.Buffer {
-    if isStringEmpty(key) {
+    if IsStringEmpty(key) {
         return buf
     }
     // key and value
@@ -67,7 +68,7 @@ func AddFloat32ToJsonStructure (buf bytes.Buffer, key string, value float32) byt
 }
 
 func AddFloat64ToJsonStructure (buf bytes.Buffer, key string, value float64) bytes.Buffer {
-    if isStringEmpty(key) {
+    if IsStringEmpty(key) {
         return buf
     }
     // key and value
@@ -79,7 +80,7 @@ func AddFloat64ToJsonStructure (buf bytes.Buffer, key string, value float64) byt
 }
 
 func AddBoolToJsonStructure (buf bytes.Buffer, key string, value bool) bytes.Buffer {
-    if isStringEmpty(key) {
+    if IsStringEmpty(key) {
         return buf
     }
     // key and value
@@ -90,12 +91,10 @@ func AddBoolToJsonStructure (buf bytes.Buffer, key string, value bool) bytes.Buf
     return buf
 }
 
-// TODO: add array syntax and map (object) syntax too
-
 // assume the interface{} String() returns a valid json as well...
 // or else it won't work
 func AddArrayToJsonStructure (buf bytes.Buffer, key string, values []interface{}) bytes.Buffer {
-    if isStringEmpty(key) {
+    if IsStringEmpty(key) {
         return buf
     }
     // key and value
@@ -121,8 +120,11 @@ func AddArrayToJsonStructure (buf bytes.Buffer, key string, values []interface{}
     return buf
 }
 
+
+// TODO: add array syntax and map (object) syntax too
+
 func BeginObjectJsonStructure (buf bytes.Buffer, key string) bytes.Buffer {
-    if isStringEmpty(key) {
+    if IsStringEmpty(key) {
         return buf
     }
     // add the key and open "{"
@@ -150,10 +152,37 @@ func removeTrailingCommaFromJsonStructure (buf bytes.Buffer) bytes.Buffer {
     return buf
 }
 
-// method to check if the given string is empty or not (trim + len == 0 check)
-func isStringEmpty (val string) bool {
-    if len(strings.TrimSpace(val)) == 0 {
-        return true
+// experimental method to convert a given interface to a json string.
+// Only support simple, basic type(s) { int, float32, float64, string, bool }
+func ConvertInterfaceToJsonStructure (buf bytes.Buffer, value interface{}) bytes.Buffer {
+    var b bytes.Buffer
+    if value != nil {
+        valType := reflect.TypeOf(value)
+        valValue := reflect.ValueOf(value)
+
+        b = BeginJsonStructure(b)
+        for i := 0; i < valType.NumField(); i++ {
+            fieldMeta := valType.Field(i)
+            targetFieldName := fieldMeta.Tag.Get("json")
+            fieldData := valValue.Field(i)
+
+            switch fieldData.Kind() {
+            case reflect.String:
+                b = AddStringToJsonStructure(b, targetFieldName, fieldData.String())
+            case reflect.Int:
+                b = AddIntToJsonStructure(b, targetFieldName, int(fieldData.Int()))
+            case reflect.Float32:
+                b = AddFloat32ToJsonStructure(b, targetFieldName, float32(fieldData.Float()))
+            case reflect.Float64:
+                b = AddFloat64ToJsonStructure(b, targetFieldName, fieldData.Float())
+            case reflect.Bool:
+                b = AddBoolToJsonStructure(b, targetFieldName, fieldData.Bool())
+            default:
+                // including slice (due to the lack of ability to cast value to a static string listed type value)
+                fmt.Printf("non supported data type [%v]\n", fieldData.Kind())
+            }
+        }
+        b = EndJsonStructure(b)
     }
-    return false
+    return b
 }

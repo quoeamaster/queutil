@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/FlexLogger.go" beforeDir="false" afterPath="$PROJECT_DIR$/FlexLogger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/JsonUtil.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtilTests_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-levels.log" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-levels.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-options.log" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-options.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling-2018-07-17T11-07-23.101.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling-2018-07-17T11-07-23.169.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling.log" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +27,7 @@
       <file leaf-file-name="StructsAndInterfaces.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state>
               <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
             </state>
           </provider>
@@ -25,17 +36,17 @@
       <file leaf-file-name="HttpClientUtil.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
+            <state relative-caret-position="580">
               <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpClient_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go">
+      <file leaf-file-name="FileLocked_test.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+            <state relative-caret-position="360">
+              <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -43,35 +54,17 @@
       <file leaf-file-name="JsonUtil.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JsonUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="135" column="61" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
+            <state relative-caret-position="173">
+              <caret line="161" selection-start-line="161" selection-end-line="161" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlexLogger.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FlexLogger.go">
+      <file leaf-file-name="Logging_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="158" column="39" selection-start-line="158" selection-start-column="39" selection-end-line="158" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonUtil.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="191" selection-start-line="27" selection-start-column="191" selection-end-line="27" selection-end-column="191" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonUtil_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+            <state relative-caret-position="360">
+              <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -99,6 +92,7 @@
       <find>isfile</find>
       <find>fileInfo.is</find>
       <find>client</find>
+      <find>isStringEmpty</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.10.2/libexec" />
@@ -113,12 +107,10 @@
         <option value="$PROJECT_DIR$/Structs.go" />
         <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocks.feature" />
         <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocked.feature" />
-        <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" />
         <option value="$PROJECT_DIR$/LoggerImplementations.go" />
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml.go" />
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml" />
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging.feature" />
-        <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" />
         <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient.feature" />
         <option value="$PROJECT_DIR$/test/features/ReflectionTests/ReflectionTestsObjects.go" />
         <option value="$PROJECT_DIR$/test/features/ReflectionTests/RelectionTests.feature" />
@@ -128,15 +120,19 @@
         <option value="$PROJECT_DIR$/IOUtil.go" />
         <option value="$PROJECT_DIR$/ErrorUtil.go" />
         <option value="$PROJECT_DIR$/TimeUtil.go" />
-        <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" />
         <option value="$PROJECT_DIR$/HttpClientUtil.go" />
         <option value="$PROJECT_DIR$/ApiBuilder.go" />
         <option value="$PROJECT_DIR$/StructsAndInterfaces.go" />
-        <option value="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go" />
-        <option value="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature" />
         <option value="$PROJECT_DIR$/TypeUtil.go" />
-        <option value="$PROJECT_DIR$/JsonUtil.go" />
         <option value="$PROJECT_DIR$/FlexLogger.go" />
+        <option value="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go" />
+        <option value="$PROJECT_DIR$/test/RunGodog_test.go" />
+        <option value="$PROJECT_DIR$/JsonUtil.go" />
+        <option value="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature" />
+        <option value="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtilTests_test.go" />
+        <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" />
+        <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" />
+        <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" />
       </list>
     </option>
   </component>
@@ -180,6 +176,13 @@
               <item name="queutil" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="FileLocks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="queutil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="queutil" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
               <item name="JsonUtilTests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -196,6 +199,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/features/JsonUtilTests" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/features/JsonUtilTests/Testing" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -245,20 +256,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TypeUtil.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -385,22 +382,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="110" column="18" lean-forward="true" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml.go" />
     <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/flexLogger.toml" />
-    <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="243" column="61" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/Logging.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
@@ -487,13 +470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IOUtil.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -510,15 +486,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state>
           <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="191" selection-start-line="27" selection-start-column="191" selection-end-line="27" selection-end-column="191" />
         </state>
       </provider>
     </entry>
@@ -526,13 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -550,13 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LoggerImplementations.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-230">
@@ -564,17 +519,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsonUtil.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="135" column="61" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FlexLogger.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="158" column="39" selection-start-line="158" selection-start-column="39" selection-end-line="158" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/Testing/JsonUtil.feature">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JsonUtil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="161" selection-start-line="161" selection-end-line="161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtilTests_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="32" column="1" selection-start-line="16" selection-end-line="32" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
         </state>
       </provider>
     </entry>
