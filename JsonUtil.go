@@ -55,6 +55,18 @@ func AddIntToJsonStructure (buf bytes.Buffer, key string, value int) bytes.Buffe
     return buf
 }
 
+func AddInt64ToJsonStructure (buf bytes.Buffer, key string, value int64) bytes.Buffer {
+    if IsStringEmpty(key) {
+        return buf
+    }
+    // key and value
+    buf.WriteString("\"")
+    buf.WriteString(key)
+    buf.WriteString("\": ")
+    buf.WriteString(fmt.Sprintf("%v,", value))
+    return buf
+}
+
 func AddFloat32ToJsonStructure (buf bytes.Buffer, key string, value float32) bytes.Buffer {
     if IsStringEmpty(key) {
         return buf

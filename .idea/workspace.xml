@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JsonUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/JsonUtil.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtilTests_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-levels.log" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-levels.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-options.log" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-options.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling-2018-07-17T11-07-23.101.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling-2018-07-17T11-07-23.169.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling.log" beforeDir="false" afterPath="$PROJECT_DIR$/test/features/LogToFileNConsole/logs/test-rolling.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,20 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileLocked_test.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonUtil.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JsonUtil.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JsonUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="161" selection-start-line="161" selection-end-line="161" />
+            <state relative-caret-position="339">
+              <caret line="57" column="71" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -127,12 +107,12 @@
         <option value="$PROJECT_DIR$/FlexLogger.go" />
         <option value="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go" />
         <option value="$PROJECT_DIR$/test/RunGodog_test.go" />
-        <option value="$PROJECT_DIR$/JsonUtil.go" />
         <option value="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature" />
         <option value="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtilTests_test.go" />
         <option value="$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go" />
         <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" />
         <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" />
+        <option value="$PROJECT_DIR$/JsonUtil.go" />
       </list>
     </option>
   </component>
@@ -543,13 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsonUtil.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="161" selection-start-line="161" selection-end-line="161" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/features/LogToFileNConsole/Logging_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -571,6 +544,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -578,10 +558,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go">
+    <entry file="file://$PROJECT_DIR$/JsonUtil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+        <state relative-caret-position="339">
+          <caret line="57" column="71" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
         </state>
       </provider>
     </entry>
