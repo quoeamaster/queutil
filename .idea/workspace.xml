@@ -34,8 +34,8 @@
       <file leaf-file-name="JsonUtil.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JsonUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="57" column="71" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
+            <state relative-caret-position="310">
+              <caret line="186" column="80" selection-start-line="186" selection-start-column="80" selection-end-line="186" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -73,6 +73,7 @@
       <find>fileInfo.is</find>
       <find>client</find>
       <find>isStringEmpty</find>
+      <find>non</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.10.2/libexec" />
@@ -560,8 +561,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JsonUtil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="57" column="71" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
+        <state relative-caret-position="310">
+          <caret line="186" column="80" selection-start-line="186" selection-start-column="80" selection-end-line="186" selection-end-column="80" />
         </state>
       </provider>
     </entry>

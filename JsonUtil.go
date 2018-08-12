@@ -183,6 +183,8 @@ func ConvertInterfaceToJsonStructure (buf bytes.Buffer, value interface{}) bytes
                 b = AddStringToJsonStructure(b, targetFieldName, fieldData.String())
             case reflect.Int:
                 b = AddIntToJsonStructure(b, targetFieldName, int(fieldData.Int()))
+            case reflect.Int64:
+                b = AddInt64ToJsonStructure(b, targetFieldName, fieldData.Int())
             case reflect.Float32:
                 b = AddFloat32ToJsonStructure(b, targetFieldName, float32(fieldData.Float()))
             case reflect.Float64:
