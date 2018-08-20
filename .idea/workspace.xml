@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64b4cfd-7f81-40c3-b811-f78ae74c1fd9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/JsonUtil.go" beforeDir="false" afterPath="$PROJECT_DIR$/JsonUtil.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StructsAndInterfaces.go" beforeDir="false" afterPath="$PROJECT_DIR$/StructsAndInterfaces.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StructsAndInterfaces.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StructsAndInterfaces.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+            <state relative-caret-position="460">
+              <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -25,13 +26,13 @@
       <file leaf-file-name="HttpClientUtil.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
+            <state relative-caret-position="1050">
               <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JsonUtil.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JsonUtil.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JsonUtil.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="310">
@@ -103,7 +104,6 @@
         <option value="$PROJECT_DIR$/TimeUtil.go" />
         <option value="$PROJECT_DIR$/HttpClientUtil.go" />
         <option value="$PROJECT_DIR$/ApiBuilder.go" />
-        <option value="$PROJECT_DIR$/StructsAndInterfaces.go" />
         <option value="$PROJECT_DIR$/TypeUtil.go" />
         <option value="$PROJECT_DIR$/FlexLogger.go" />
         <option value="$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go" />
@@ -114,6 +114,7 @@
         <option value="$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go" />
         <option value="$PROJECT_DIR$/test/features/FileLocks/FileLocked_test.go" />
         <option value="$PROJECT_DIR$/JsonUtil.go" />
+        <option value="$PROJECT_DIR$/StructsAndInterfaces.go" />
       </list>
     </option>
   </component>
@@ -133,7 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,6 +170,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -205,7 +206,7 @@
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17124394" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1736672" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
@@ -237,6 +238,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/JsonUtil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2715">
+          <caret line="186" column="80" selection-start-line="186" selection-start-column="80" selection-end-line="186" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/features/HttpClient/HttpClient_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -465,13 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ReflectionUtil.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -507,16 +508,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/Testing/JsonUtil.feature">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil_test.go" />
     <entry file="file://$PROJECT_DIR$/test/features/JsonUtilTests/JsonUtil.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -554,7 +546,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HttpClientUtil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
+        <state relative-caret-position="1050">
           <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
         </state>
       </provider>
@@ -563,6 +555,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="186" column="80" selection-start-line="186" selection-start-column="80" selection-end-line="186" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StructsAndInterfaces.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
         </state>
       </provider>
     </entry>
