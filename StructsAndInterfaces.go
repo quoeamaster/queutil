@@ -63,4 +63,7 @@ func (b *BrokerSeedVO) JsonString() string {
     }
     return string(buf)
 }
+func (b *BrokerSeedVO) String() string {
+    return b.JsonString()
+}
 
