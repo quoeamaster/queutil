@@ -52,6 +52,8 @@ type BrokerSeedVO struct {
     BrokerId string                     `json:"BrokerId"`
 
     DiscoveryBrokerSeeds []string       `json:"DiscoveryBrokerSeeds"`
+
+    SecurityScheme string               `json:"SecurityScheme"`
 }
 // method to provide a json-fy string based on the contents of the current instance
 func (b *BrokerSeedVO) JsonString() string {
