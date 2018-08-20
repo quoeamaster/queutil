@@ -46,6 +46,7 @@ type BrokerSeedVO struct {
     // is the broker an active master already (no election needed)
     IsActiveMaster bool                 `json:"IsActiveMaster"`
 
+    ClusterName string                  `json:"ClusterName"`
     BrokerName string                   `json:"BrokerName"`
     BrokerCommunicationAddr string      `json:"BrokerCommunicationAddr"`
     BrokerId string                     `json:"BrokerId"`
